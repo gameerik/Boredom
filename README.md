@@ -1,1 +1,1 @@
-# g++ MyGame.cpp -o test -pthread
+# g++ MyGame.cpp -o whatever -pthread
