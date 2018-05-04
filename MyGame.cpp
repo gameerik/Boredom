@@ -96,10 +96,10 @@ class Game
 
     void Enemy_Movement()
     {
-        srand((unsigned)time(0));
+        //srand((unsigned)time(0));
         for (auto &i : enemies)
         {
-            switch (int chance = (rand() % 8) + 1)
+            /*   switch (int chance = (rand() % 8) + 1)
             {
             case 1:
                 if (current_level[i.get_enemy_x() + 1][i.get_enemy_y()] != '#')
@@ -171,6 +171,59 @@ class Game
                 }
                 break;
             };
+            */
+            if ((i.get_enemy_x() > player_x) && (i.get_enemy_y() > player_y))
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.dec_enemy_x();
+                i.dec_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if ((i.get_enemy_x() < player_x) && (i.get_enemy_y() < player_y))
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.inc_enemy_x();
+                i.inc_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if ((i.get_enemy_x() > player_x) && (i.get_enemy_y() < player_y))
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.dec_enemy_x();
+                i.inc_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if ((i.get_enemy_x() < player_x) && (i.get_enemy_y() > player_y))
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.inc_enemy_x();
+                i.dec_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if (i.get_enemy_x() > player_x)
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.dec_enemy_x();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if (i.get_enemy_x() < player_x)
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.inc_enemy_x();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if (i.get_enemy_y() > player_x)
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.dec_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
+            else if (i.get_enemy_y() < player_x)
+            {
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = ' ';
+                i.inc_enemy_y();
+                current_level[i.get_enemy_x()][i.get_enemy_y()] = '&';
+            }
         }
     }
 
