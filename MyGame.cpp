@@ -220,7 +220,26 @@ class Game
                 system("clear");
                 Display_Level();
                 break;
+            case 'W':
+                if (current_level[player_x - 1][player_y] != '#')
+                {
+                    current_level[player_x--][player_y] = ' ';
+                    current_level[player_x][player_y] = '@';
+                }
+                system("clear");
+                Display_Level();
+                break;
             case 's':
+                if (current_level[player_x + 1][player_y] != '#')
+                {
+                    current_level[player_x++][player_y] = ' ';
+                    current_level[player_x][player_y] = '@';
+                }
+                system("clear");
+                Display_Level();
+
+                break;
+            case 'S':
                 if (current_level[player_x + 1][player_y] != '#')
                 {
                     current_level[player_x++][player_y] = ' ';
@@ -240,7 +259,27 @@ class Game
                 Display_Level();
 
                 break;
+            case 'A':
+                if (current_level[player_x][player_y - 1] != '#')
+                {
+                    current_level[player_x][player_y--] = ' ';
+                    current_level[player_x][player_y] = '@';
+                }
+                system("clear");
+                Display_Level();
+
+                break;
             case 'd':
+                if (current_level[player_x][player_y + 1] != '#')
+                {
+                    current_level[player_x][player_y++] = ' ';
+                    current_level[player_x][player_y] = '@';
+                }
+                system("clear");
+                Display_Level();
+
+                break;
+            case 'D':
                 if (current_level[player_x][player_y + 1] != '#')
                 {
                     current_level[player_x][player_y++] = ' ';
@@ -292,11 +331,12 @@ void custom_game(int map_x, int map_y, int enemies_count)
 void show_rules()
 {
     std::cout << "You are controllong the ' @ ' symbol , your main objectives is to survive as long as possible , you do that by avoiding the ' & ' symbol\n";
+    std::cout << "Controls are : W(up), S(down),A(left),D(right)\n";
 }
 void initialize()
 {
     char input;
-    std::cout << "Would you like to read the rules ?(Y/N)\n";
+    std::cout << "Would you like to read the rules/controls ?(Y/N)\n";
     std::cin >> input;
     if (input == 'Y')
         show_rules();
