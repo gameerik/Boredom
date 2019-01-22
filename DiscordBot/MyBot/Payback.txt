@@ -1,7 +1,1 @@
- vagy te
- mit pofazol te nekem
- hat coki mar
- ne ordits mar , szaros kolyke
- mit ugatsz
- agyhalott , fogd mar be
- kussolj te agyhalott geci
+ // this is where the payback text goes
