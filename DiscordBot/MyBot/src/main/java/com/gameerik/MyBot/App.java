@@ -169,13 +169,8 @@ public class App extends ListenerAdapter {
     	bw.close();
     }
     
-     /* static void buildBurn() {
-		burn.add(" is a fucking retard");
-		burn.add(" was born mentally disabled");	
-		burn.add(" xD");	
-		burn.add(" I'm a robot and I think you are mentally challenged by this world");				
-}*/
-    
+  
+    //hardcoded prototype  
     static void buildGifs() {
 		gifs = new String[]{
 				"C:\\Users\\eriks\\Desktop\\gif1.gif",
