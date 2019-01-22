@@ -41,7 +41,7 @@ public class App extends ListenerAdapter {
 	
     public static void main( String[] args ) throws Exception {
     	buildGifs();
-    	JDA jda = new JDABuilder("NTAzMjAwOTIzNTY1MTYyNDk2.DqzaLw.krHr-yod0j1H_bgebSp_F1kf3xc").addEventListener(new App()).build();
+    	JDA jda = new JDABuilder("your personal bot token goes here").addEventListener(new App()).build();
     	jda.awaitReady();
     	System.out.println("Building finished");
     }
