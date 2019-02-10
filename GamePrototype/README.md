@@ -2,4 +2,4 @@
 # compile from the command-line , using the following command(linux):
 # g++ MyGame.cpp -o whatever -pthread
 # run from the command-line(linux):
-# /whatever
+# ./whatever
